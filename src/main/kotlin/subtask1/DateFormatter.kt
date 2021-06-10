@@ -7,8 +7,8 @@ import java.util.*
 
 class DateFormatter {
     fun toTextDay(day: String, month: String, year: String): String {
-        val simpleDateFormatValidator = SimpleDateFormat("dd.MM.yyyy")
-        val simpleDateFormatResult = SimpleDateFormat("dd MMMM, EEEE")
+        val simpleDateFormatValidator = SimpleDateFormat("dd.MM.yyyy", Locale("ru"))
+        val simpleDateFormatResult = SimpleDateFormat("dd MMMM, EEEE", Locale("ru"))
         val dateResult: Date
 
         simpleDateFormatValidator.isLenient = false
@@ -23,7 +23,7 @@ class DateFormatter {
 
 fun main(args: Array<String>) {
     //DATE
-    val date = Date(0)//represent current date in milliseconds from 1 january 1970
+    val date = Date()//represent current date in milliseconds from 1 january 1970
 //    print(date)
 
     //CALENDAR
@@ -34,7 +34,7 @@ fun main(args: Array<String>) {
 //    println(calendar.time)
 
     //DATE FORMAT (заготовленные форматы)
-//    val dateFormat = DateFormat.getDateInstance(DateFormat.SHORT)
+    val dateFormat = DateFormat.getDateInstance(DateFormat.SHORT)
 //    println(dateFormat.format(calendar.time)) //dateFormat.format(date)
 
     //SIMPLE DATE FORMAT (свой формат или парсинг)
